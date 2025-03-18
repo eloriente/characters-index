@@ -1,8 +1,8 @@
 /*** Entities ***/
-import Character from "../entities/Character";
+import Character from "../../domain/entities/Character";
 
 /*** Repositories ***/
-import CharacterRepository from "../ports/CharacterRepository";
+import CharacterRepository from "../../domain/repositories/CharacterRepository";
 
 class GetCharacters {
   constructor(private characterRepository: CharacterRepository) {}

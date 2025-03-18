@@ -1,9 +1,9 @@
 /*** Entities ***/
-import Character from "../../core/entities/Character";
-import ApiCharacter from "../../core/entities/ApiCharacter";
+import Character from "../../domain/entities/Character";
+import ApiCharacter from "../../domain/entities/ApiCharacter";
 
 /*** Repositories ***/
-import CharacterRepository from "../../core/ports/CharacterRepository";
+import CharacterRepository from "../../domain/repositories/CharacterRepository";
 
 /*** Utils ***/
 import getApiQueryParamsBase from "../utils/apiQueryBase";
