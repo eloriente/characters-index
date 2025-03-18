@@ -6,7 +6,7 @@ This project consists of a web application for the visualization of the first 50
 
 ### How to start up
 
-_Important! Before starting, the keys to the Marvel API should be defined following the [env example file](./.env.example)._
+_Important! Before starting, the keys to the Marvel API should be defined following the [env example file](./.env.example). In case you do not have a password go to [developer.marvel.com](https://developer.marvel.com/documentation/getting_started)_
 
 To start with the startup of the project on your computer you should make sure that you have all the Node packages installed, if not please go to your terminal and run the following command `npm install` or `yarn install`.
 
