@@ -1,37 +1,24 @@
 /*** Entities ***/
 import Character from "../../domain/entities/Character";
-import ApiCharacter from "../../domain/entities/ApiCharacter";
 
 /*** Repositories ***/
 import CharacterRepository from "../../domain/repositories/CharacterRepository";
 
-/*** Utils ***/
-import getApiQueryParamsBase from "../utils/apiQueryBase";
-
 class CharacterApi implements CharacterRepository {
   async getCharacter(limit: number): Promise<Character[]> {
-    const queryParamsBase = getApiQueryParamsBase();
+    if (!import.meta.env.VITE_API_URL) {
+      throw new Error("API URL not found");
+    }
+
     const response = await fetch(
-      `${
-        import.meta.env.VITE_API_URL
-      }/characters?${queryParamsBase}&limit=${limit}`
+      `${import.meta.env.VITE_API_URL}/characters?limit=${limit}`
     );
     const charactersData = await response.json();
 
-    if (charactersData.code !== 200) {
-      throw new Error("Error requesting characters");
-    }
+    console.log(charactersData);
 
-    const characters: Character[] = charactersData.data.results.map(
-      (character: ApiCharacter) => {
-        return new Character(
-          character.id,
-          character.name,
-          character.description,
-          `${character.thumbnail.path}.${character.thumbnail.extension}`,
-          character.comics.items
-        );
-      }
+    const characters: Character[] = charactersData.items.map(
+      (character: Character) => character
     );
 
     return characters;

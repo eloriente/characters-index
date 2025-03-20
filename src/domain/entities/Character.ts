@@ -1,13 +1,20 @@
 /*** Entities ***/
-import Comics from "./Comics";
+import OriginPlanet from "./OriginPlanet";
+import Transformations from "./Transformations";
 
 class Character {
   constructor(
-    public id: string,
+    public id: number,
     public name: string,
+    public ki: string,
+    public maxKi: string,
+    public race: string,
+    public gender: string,
     public description: string,
     public image: string,
-    public comics: Comics["items"]
+    public affiliation: string,
+    public originPlanet: OriginPlanet,
+    public transformations: Transformations[]
   ) {}
 }
 
