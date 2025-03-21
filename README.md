@@ -1,12 +1,12 @@
-# Marvel Character Guide
+# Characters Guide
 
 ### Description
 
-This project consists of a web application for the visualization of the first 50 Marvel Comics characters and their detailed information and the first 20 comics in which they appeared that we get from the official API.
+This project consists of a web application for the visualization of the first 50 characters and their detailed information and the first 20 comics in which they appeared that we get from the official API.
 
 ### How to start up
 
-_Important! Before starting, the keys to the Marvel API should be defined following the [env example file](./.env.example). In case you do not have a password go to [developer.marvel.com](https://developer.marvel.com/documentation/getting_started)_
+_Important! Before starting, you need to following the [.env.example](./.env.example) file to get the API url on the environment variables. In case of doubts consult [the official documentation](https://web.dragonball-api.com/documentation)._
 
 To start with the startup of the project on your computer you should make sure that you have all the Node packages installed, if not please go to your terminal and run the following command `npm install` or `yarn install`.
 

@@ -1,5 +1,5 @@
 {
-  "name": "marvel-index",
+  "name": "characters-index",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,16 +12,19 @@
   },
   "dependencies": {
     "md5": "^2.3.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router": "^7.3.0",
+    "styled-components": "^6.1.16",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/jest": "^29.5.14",
     "@types/md5": "^2.3.5",
     "@types/node": "^22.13.10",
-    "@types/react": "^17.0.10",
-    "@types/react-dom": "^17.0.4",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/coverage-v8": "^3.0.9",
     "eslint": "^9.21.0",
