@@ -35,7 +35,8 @@ describe("src > application > useCases > GetCharacters", () => {
     fetchSpy.mockRestore();
   });
 
-  it("should throw an error when the response code is different from 200", async () => {
+  it("should throw an error when the API url it's not defined", async () => {
+    import.meta.env.VITE_API_URL = "";
     const fetchSpy = vi.spyOn(global, "fetch").mockResolvedValueOnce({
       json: async () => characterApiResultErrorMock,
     } as Response);
@@ -43,9 +44,7 @@ describe("src > application > useCases > GetCharacters", () => {
     const charactersRepository = new CharacterApi();
     const getCharacters = new GetCharacters(charactersRepository);
 
-    expect(getCharacters.execute(50)).rejects.toThrowError(
-      "Error requesting characters"
-    );
+    expect(getCharacters.execute(50)).rejects.toThrowError("API URL not found");
 
     fetchSpy.mockRestore();
   });
