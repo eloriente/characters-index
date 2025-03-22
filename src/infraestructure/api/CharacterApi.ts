@@ -15,8 +15,6 @@ class CharacterApi implements CharacterRepository {
     );
     const charactersData = await response.json();
 
-    console.log(charactersData);
-
     const characters: Character[] = charactersData.items.map(
       (character: Character) => character
     );
