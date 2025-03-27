@@ -12,6 +12,11 @@ import useFavorites from "../../../hooks/favorites/favorites.hook";
 function HeaderComponent() {
   const { favorites, setOnlyFavorites } = useFavorites();
 
+  function handleSetOnlyFavorites() {
+    if (favorites.length > 0) setOnlyFavorites(true);
+    return;
+  }
+
   return (
     <HeaderStyledWrapper>
       <HeaderLogoLink to={"/"} onClick={() => setOnlyFavorites(false)}>
@@ -22,7 +27,7 @@ function HeaderComponent() {
         />
       </HeaderLogoLink>
       <HeaderFavoriteWrapper>
-        <IconComponent selected onClick={() => setOnlyFavorites(true)} />
+        <IconComponent selected onClick={() => handleSetOnlyFavorites()} />
         <p>{favorites.length}</p>
       </HeaderFavoriteWrapper>
     </HeaderStyledWrapper>
