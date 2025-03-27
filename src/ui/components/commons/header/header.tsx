@@ -1,23 +1,30 @@
-/*** Vendors ***/
-import { NavLink } from "react-router";
-
 /*** Styled ***/
 import IconComponent from "../icon/icon.component";
-import { HeaderStyledWrapper } from "./header.styled";
+import {
+  HeaderStyledWrapper,
+  HeaderFavoriteWrapper,
+  HeaderLogoLink,
+} from "./header.styled";
+
+/*** Header ***/
+import useFavorites from "../../../hooks/favorites/favorites.hook";
 
 function HeaderComponent() {
+  const { favorites, setOnlyFavorites } = useFavorites();
+
   return (
     <HeaderStyledWrapper>
-      <NavLink to={"/"}>
+      <HeaderLogoLink to={"/"} onClick={() => setOnlyFavorites(false)}>
         <img
           src="/dragonball-z.svg"
           alt="Dragon Ball Logo"
           style={{ width: "7vw" }}
         />
-      </NavLink>
-      <p>
-        <IconComponent selected />
-      </p>
+      </HeaderLogoLink>
+      <HeaderFavoriteWrapper>
+        <IconComponent selected onClick={() => setOnlyFavorites(true)} />
+        <p>{favorites.length}</p>
+      </HeaderFavoriteWrapper>
     </HeaderStyledWrapper>
   );
 }

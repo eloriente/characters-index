@@ -14,13 +14,22 @@ import {
 /*** Types ***/
 import CardPropsType from "./types/card.types";
 
+/*** Hooks ***/
+import useFavoritesStore from "../../../hooks/favorites/favorites.hook";
+
 function Card({ id, name, image, selected = false }: CardPropsType) {
   const [isSelected, setIsSelected] = useState<boolean>(selected);
   const [isHover, setIsHover] = useState<boolean>(false);
+  const { addFavorite, removeFavorite } = useFavoritesStore();
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     setIsSelected(!isSelected);
+    if (isSelected === true) {
+      removeFavorite(id);
+    } else {
+      addFavorite(id);
+    }
   };
 
   useEffect(() => {

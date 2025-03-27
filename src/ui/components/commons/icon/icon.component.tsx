@@ -1,8 +1,8 @@
 /*** Types ***/
 import IconPropsType from "./icon.types";
 
-function IconComponent({ selected, isHover, onClick }: IconPropsType) {
-  const icon = selected ? (
+function FavoriteIcon(isHover: boolean = false) {
+  return (
     <svg
       width="24"
       height="22"
@@ -17,7 +17,11 @@ function IconComponent({ selected, isHover, onClick }: IconPropsType) {
         fill={isHover ? "white" : "#EC1D24"}
       />
     </svg>
-  ) : (
+  );
+}
+
+function noFavorite() {
+  return (
     <svg
       width="26"
       height="25"
@@ -31,6 +35,10 @@ function IconComponent({ selected, isHover, onClick }: IconPropsType) {
       />
     </svg>
   );
+}
+
+function IconComponent({ selected, isHover, onClick }: IconPropsType) {
+  const icon = selected ? FavoriteIcon(isHover) : noFavorite();
 
   return <div onClick={(e) => onClick?.(e)}>{icon}</div>;
 }

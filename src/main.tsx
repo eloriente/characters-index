@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 /*** Layouts ***/
-import RootLayout from "./ui/layouts/RootLayout";
+import RootLayout from "./ui/layouts/root/RootLayout";
 
 /*** Global Styles ***/
 import Styles from "./ui/components/commons/globals";
