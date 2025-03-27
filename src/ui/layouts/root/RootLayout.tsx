@@ -14,12 +14,16 @@ import RootLayoutaContextType from "../../types/RootLayoutContext.type";
 
 function RootLayout() {
   const { characters, setCharacters } = useCharactersStore();
-  const { favorites, onlyFavorites } = useFavorites();
+  const { favorites, onlyFavorites, setOnlyFavorites } = useFavorites();
   const contextValue: RootLayoutaContextType = {
     characters,
     favorites,
     onlyFavorites,
   };
+
+  useEffect(() => {
+    if (favorites.length < 1) setOnlyFavorites(false);
+  }, [favorites, setOnlyFavorites]);
 
   useEffect(() => {
     setCharacters(50);
