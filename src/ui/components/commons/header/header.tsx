@@ -26,8 +26,8 @@ function HeaderComponent() {
           style={{ width: "7vw" }}
         />
       </HeaderLogoLink>
-      <HeaderFavoriteWrapper>
-        <IconComponent selected onClick={() => handleSetOnlyFavorites()} />
+      <HeaderFavoriteWrapper onClick={() => handleSetOnlyFavorites()}>
+        <IconComponent selected />
         <p>{favorites.length}</p>
       </HeaderFavoriteWrapper>
     </HeaderStyledWrapper>
