@@ -43,7 +43,7 @@ function Card({ id, name, image, selected = false }: CardPropsType) {
       onMouseOut={() => setIsHover(false)}
     >
       <CardStyledImage src={image} />
-      <CardStyledBanner data-testId="card-banner">
+      <CardStyledBanner data-testid="card-banner">
         <p>{name}</p>
         <IconComponent
           selected={isSelected}
